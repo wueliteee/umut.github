@@ -1,36 +1,80 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>En Güzel Kız 💖</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Irmağımm</title>
   <style>
     body {
-      margin: 0;
-      background-color: #fff0f5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      font-family: 'Segoe UI', sans-serif;
-      flex-direction: column;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      background-color: #fce4ec;
     }
-    img {
-      max-width: 90%;
-      max-height: 80vh;
-      border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    .container {
+      margin-top: 10px;
     }
-    h1 {
-      color: #d81b60;
-      margin-bottom: 30px;
+    .cat-img {
+      width: 320px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+    .buttons {
+      margin-top: 20px;
+      position: relative;
+      height: 200px;
+    }
+    .yes, .no {
+      font-size: 18px;
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      text-decoration: none;
+      color: white;
+      display: inline-block;
+    }
+    .yes {
+      background-color: #4caf50;
+    }
+    .no {
+      background-color: #f44336;
+      position: absolute;
     }
   </style>
 </head>
 <body>
 
-  <h1>Karşınızda dünyanın en güzeli 💘</h1>
-  <img src="5965116735969413814.jpg" alt="En Güzel Kız">
+  <h2>Dünyanın en güzel kızını görmek ister misin?</h2>
+
+  <div class="container">
+    <div class="buttons">
+      <a href="index2.html" class="yes" id="yesBtn" target="_blank">Evet</a>
+      <button class="no" onmouseover="moveButton()">Hayır</button>
+    </div>
+  </div>
+
+  <audio id="myAudio" loop>
+    <source src="Uyu.mp3" type="audio/mpeg" />
+    Tarayıcınız audio etiketini desteklemiyor.
+  </audio>
+
+  <script>
+    function moveButton() {
+      const button = document.querySelector('.no');
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 50);
+      button.style.left = x + 'px';
+      button.style.top = y + 'px';
+    }
+
+    const audio = document.getElementById('myAudio');
+    const yesBtn = document.getElementById('yesBtn');
+
+    yesBtn.addEventListener('click', () => {
+      audio.play().catch(e => console.log('Ses çalma engellendi:', e));
+    });
+  </script>
 
 </body>
 </html>
