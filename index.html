@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Irmağımm</title>
   <style>
     body {
       text-align: center;
       font-family: Arial, sans-serif;
       background-color: #fce4ec;
-    }
-    .a {
-        text-decoration: none;
     }
     .container {
       margin-top: 10px;
@@ -26,21 +23,22 @@
       position: relative;
       height: 200px;
     }
-    button {
+    .yes, .no {
       font-size: 18px;
       padding: 10px 20px;
       margin: 10px;
       border: none;
       cursor: pointer;
       border-radius: 5px;
+      text-decoration: none;
+      color: white;
+      display: inline-block;
     }
     .yes {
-      background-color: #4CAF50;
-      color: white;
+      background-color: #4caf50;
     }
     .no {
       background-color: #f44336;
-      color: white;
       position: absolute;
     }
   </style>
@@ -48,12 +46,18 @@
 <body>
 
   <h2>Dünyanın en güzel kızını görmek ister misin?</h2>
+
   <div class="container">
     <div class="buttons">
-      <button class="yes" ><a href="main.html">Evet</a></button>
+      <a href="index2.html" class="yes" id="yesBtn" target="_blank">Evet</a>
       <button class="no" onmouseover="moveButton()">Hayır</button>
     </div>
   </div>
+
+  <audio id="myAudio" loop>
+    <source src="Uyu.mp3" type="audio/mpeg" />
+    Tarayıcınız audio etiketini desteklemiyor.
+  </audio>
 
   <script>
     function moveButton() {
@@ -63,6 +67,13 @@
       button.style.left = x + 'px';
       button.style.top = y + 'px';
     }
+
+    const audio = document.getElementById('myAudio');
+    const yesBtn = document.getElementById('yesBtn');
+
+    yesBtn.addEventListener('click', () => {
+      audio.play().catch(e => console.log('Ses çalma engellendi:', e));
+    });
   </script>
 
 </body>
