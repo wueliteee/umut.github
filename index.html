@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Irmağımm</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      background-color: #fce4ec;
+    }
+    .a {
+        text-decoration: none;
+    }
+    .container {
+      margin-top: 10px;
+    }
+    .cat-img {
+      width: 320px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+    .buttons {
+      margin-top: 20px;
+      position: relative;
+      height: 200px;
+    }
+    button {
+      font-size: 18px;
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .yes {
+      background-color: #4CAF50;
+      color: white;
+    }
+    .no {
+      background-color: #f44336;
+      color: white;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Dünyanın en güzel kızını görmek ister misin?</h2>
+  <img src="5965116735969413814.jpg" alt="Barış Resmi" class="cat-img">
+
+  <div class="container">
+    <div class="buttons">
+      <button class="yes" ><a href="index2.html">Evet</a></button>
+      <button class="no" onmouseover="moveButton()">Hayır</button>
+    </div>
+  </div>
+
+  <script>
+    function moveButton() {
+      const button = document.querySelector('.no');
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 50);
+      button.style.left = x + 'px';
+      button.style.top = y + 'px';
+    }
+  </script>
+
+</body>
+</html>
